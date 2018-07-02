@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head lang="en" th:fragment="head">
+ <!-- Required meta tags always come first -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <title>Placa</title>
+
+    <link href="../static/bootstrap/css/bootstrap.min.css" rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}"/>
+    <link href="../static/bootstrap/css/dataTables.bootstrap.min.css" rel="stylesheet" th:href="@{/bootstrap/css/dataTables.bootstrap.min.css}"/>
+    <link rel="stylesheet" href="../static/bootstrap/css/nav.css" th:href="@{/bootstrap/css/nav.css}"/>
+
+    <script
+    src="https://code.jquery.com/jquery-3.2.1.js"
+    integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+    crossorigin="anonymous"></script>
+
+   
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="../static/bootstrap/js/bootstrap.min.js" th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+
+    <script type="text/javascript" src="../static/bootstrap/js/jquery.dataTables.min.js" th:src="@{/bootstrap/js/jquery.dataTables.min.js}"></script>
+    <script type="text/javascript" src="../static/bootstrap/js/dataTables.bootstrap.min.js" th:src="@{/bootstrap/js/dataTables.bootstrap.min.js}"></script>
+
+    <script>
+            $(document).ready(function(){
+    
+                $('#example').DataTable();
+    
+            });
+    </script>
+    
+    
+</head>
+
+<body>
+
+</body>
+
+</html>

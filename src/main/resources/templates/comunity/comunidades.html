@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>Spring Boot Exemple</title>
+	<link href="../../static/css/style.css" th:href="@{css/style.css}" rel="stylesheet" media="screen"/>
+	
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+
+<!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+<div class= "container" >
+
+	<div class = "row">
+	
+		<div class ="col-md-6">
+			 <h2>Lista de Comunidades </h2>
+		</div>
+		
+		<div class ="col-md-6">
+		 	<h2 class ="agregar"><a href="#" th:href="@{/comunidad/nuevo}">Agregar +</a> </h2>
+		</div>
+		
+	</div>
+	
+    <div>    
+	    <div th:if="${not #lists.isEmpty(comunidades)}">
+	    
+	        <table id="example" class="table table-striped table-bordered table-responsive-md" cellspacing="0" width="100%" >
+	           <thead>
+	            <tr>
+	                <th>Id</th>
+	                <th>Nombre Comunidad</th>
+	                <th>Tipo Comunidad</th>  
+	                <th>Ver</th>
+	                <th>Editar</th>
+	                <th>Eliminar</th>
+	            </tr>
+	           </thead>
+	            <tbody>
+	            <tr th:each="comunidad : ${comunidades}">
+	                <td th:text="${comunidad.id}"><a href="/comunidad/${comunidad.id}">Id</a></td>
+	                <td th:text="${comunidad.nameComunity}">Nombre Comunidad</td>
+	                <td th:text="${comunidad.typeComunity}">Tipo Comunidad</td>
+	                <td><a th:href="${ '/comunidad/' + comunidad.id}">Ver</a></td>
+	                <td><a th:href="${'/comunidad/editar/' + comunidad.id}">Editar</a></td>
+	                <td><a th:href="${'/comunidad/eliminar/' + comunidad.id}">Eliminar</a></td>
+	            </tr>
+	           </tbody>
+	        </table>
+	
+	    </div>
+	  </div>
+</div>
+    <script>
+            $(document).ready(function(){
+    
+                $('#example').DataTable();
+    
+            });
+    </script>
+</body>
+</html>
